@@ -1,0 +1,37 @@
+<html>
+    <head>
+
+    </head>
+    <body>
+        <canvas id="canvas", width="800", height="900">
+
+        </canvas>
+        <script>
+            function submit() {
+                var x = document.getElementById('x').value;
+                var y = document.getElementById('y').value;
+                var R = document.getElementById('R').value;
+                var canvas = document.getElementById("canvas");
+                var ctx = canvas.getContext("2d");
+                ctx.moveTo(20, 10);
+                ctx.lineTo(20, 900);
+                ctx.stroke();
+                ctx.moveTo(20, 10);
+                ctx.lineTo(800, 10);
+                ctx.stroke();
+                ctx.beginPath();
+                ctx.arc(x, y, R, 0, 2*Math.PI);
+                ctx.stroke();
+                // ctx.beginPath();
+                // ctx.arc(400, 600, 20, 0, 2*Math.PI);
+                // ctx.stroke();
+            }
+        </script>
+        <div>
+            <input type="text" id="x" value="">
+            <input type="text" id="y" value="">
+            <input type="text" id="R" value="">
+            <input type="button" value="Draw" onclick="submit()" />
+        </div>
+    </body>
+</html>
